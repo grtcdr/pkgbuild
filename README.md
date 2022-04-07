@@ -18,6 +18,7 @@ grep -E "^# (Maintainer|Contributor):" <PACKAGE>/PKGBUILD | sed -r "s/# //"
 ## Usage
 > THESE RECIPES ARE PROVIDED WITHOUT WARRANTY OF ANY KIND.
 
-1. Navigate to the directory which contains the package you'd like to install.
-2. Run `makepkg -sci`.
-3. Enjoy.
+1. Clone the repository.
+2. Navigate to the directory which contains the package you'd like to install.
+3. Run `makepkg -sci`.
+4. Enjoy.
