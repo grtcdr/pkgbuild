@@ -1,0 +1,31 @@
+# Maintainer: grtcdr <ba.tahaaziz@gmail.com>
+
+pkgname=citron
+pkgver=0.14.2
+pkgrel=1
+pkgdesc="System data via on-demand notifications."
+
+depends=('gcc-libs' 'glibc')
+makedepends=('rust' 'cargo' 'git')
+
+arch=('x86_64')
+url="https://git.sr.ht/~grtcdr/citron"
+license=('MIT')
+source=("$url/archive/v$pkgver.tar.gz")
+sha256sums=('261423d84d44c14df03bd31720bfdcd28d87ca655070cf98a7561bb5632fecbd')
+
+build() {
+    cd "$pkgname-$pkgver"
+    cargo build --release --locked --target-dir=target
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+
+    # Binary
+    install -Dm 755 "target/release/${pkgname}" -t "${pkgdir}/usr/bin"
+    # License
+    install -Dm 644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    # Manpage
+    install -Dm 644 "doc/${pkgname}.1" -t "${pkgdir}/usr/share/man/man1"
+}
