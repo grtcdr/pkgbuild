@@ -6,6 +6,11 @@ This repository contains personal and forked [PKGBUILD](https://wiki.archlinux.o
 Any forked PKGBUILD recipes found herein will always be noted as such,
 and their maintainer(s) is attributed at the tippy top of the PKGBUILD.
 
+To quickly see the maintainer of a given `<PACKAGE>`'s PKGBUILD, run the following:
+```bash
+grep -E "^# (Maintainer|Contributor):" <PACKAGE>/PKGBUILD | sed -r "s/# //"
+```
+
 ## Recipes
 - [citron](citron)
 - [emacs-git](emacs-git)
