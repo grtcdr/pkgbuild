@@ -4,9 +4,9 @@
 This repository contains personal and forked [PKGBUILD](https://wiki.archlinux.org/title/PKGBUILD) recipes.
 
 Any forked PKGBUILD recipes found herein will always be noted as such,
-and their maintainer(s) is attributed at the tippy top of the PKGBUILD.
+and their maintainer(s)/contributor(s) is/are attributed at the top of the PKGBUILD.
 
-To quickly see the maintainer of a given `<PACKAGE>`'s PKGBUILD, run the following:
+To quickly see the maintainer(s)/contributor(s) of a given `<PACKAGE>`'s PKGBUILD, run the following:
 ```bash
 grep -E "^# (Maintainer|Contributor):" <PACKAGE>/PKGBUILD | sed -r "s/# //"
 ```
