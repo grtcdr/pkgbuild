@@ -12,8 +12,8 @@ grep -E "^# (Maintainer|Contributor):" <PACKAGE>/PKGBUILD | sed -r "s/# //"
 ```
 
 ## Recipes
-- [citron](citron)
-- [emacs-git](emacs-git)
+- [citron](citron/PKGBUILD)
+- [emacs-git](emacs-git/PKGBUILD)
 
 ## Usage
 > THESE RECIPES ARE PROVIDED WITHOUT WARRANTY OF ANY KIND.
