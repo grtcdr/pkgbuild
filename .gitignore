@@ -1,8 +1,12 @@
 # Ignore everything
 *
 
-# Don't ignore directories
-!*/
+# Don't ignore these directories
+!citron/
+!emacs-git/
+
+# Don't ignore README files
+!README.md
 
 # Don't ignore PKGBUILD files
 !PKGBUILD
