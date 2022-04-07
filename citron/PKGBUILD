@@ -14,13 +14,18 @@ license=('MIT')
 source=("$url/archive/v$pkgver.tar.gz")
 sha256sums=('261423d84d44c14df03bd31720bfdcd28d87ca655070cf98a7561bb5632fecbd')
 
+prepare() {
+  _dirname=$(tar -tf v0.14.2.tar.gz | head -n1 | cut -d/ -f1)
+  mv v${pkgver}.tar.gz $_dirname
+}
+
 build() {
-    cd "$pkgname-$pkgver"
+    cd "$pkgname-v$pkgver"
     cargo build --release --locked --target-dir=target
 }
 
 package() {
-    cd "$pkgname-$pkgver"
+    cd "$pkgname-v$pkgver"
 
     # Binary
     install -Dm 755 "target/release/${pkgname}" -t "${pkgdir}/usr/bin"
